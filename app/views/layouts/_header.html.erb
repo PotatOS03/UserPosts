@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top shadow">
+  <div class="container-fluid">
+
+    <%# Project name %>
+    <%= link_to 'User Posts Project', root_path, class: 'navbar-brand' %>
+
+    <%# Menu toggle for mobile view %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <%# Navigation links %>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
+
+        <%# User-specific links %>
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to 'Profile', user_posts_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<%# Add spacing below the nav %>
+<div class="mt-5 pt-2"></div>

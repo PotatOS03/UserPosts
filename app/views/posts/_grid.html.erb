@@ -1,0 +1,13 @@
+<% if posts.any? %>
+	<div class="row row-cols-1 row-cols-md-4 g-4 my-0">
+		<% posts.each do |post| %>
+			<%= render post %>
+		<% end %>
+	</div>
+<% else %>
+	<p>No posts available.
+	<% unless user_signed_in? %>
+		<br><%= link_to "Log in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to make a post!
+	<% end %>
+	</p>
+<% end %>

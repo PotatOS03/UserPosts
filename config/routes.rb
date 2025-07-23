@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :posts, except: [ :edit, :update ]
+
+  get "users/posts" => "users#posts", as: :user_posts
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: "users/sessions",
+    passwords: "users/passwords",
+    confirmations: "users/confirmations",
+    unlocks: "users/unlocks"
+  }
+
+  devise_scope :user do
+    get "users/sign_out" => "devise/sessions#destroy"
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,4 +27,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "posts#index"
+
+  # Catch-all route for unmatched paths
+  match "*unmatched", to: "application#not_found", via: :all
 end

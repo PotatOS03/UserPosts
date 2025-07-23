@@ -1,0 +1,4 @@
+<h1><%= @user.first_name %>'s Posts</h1>
+<%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
+
+<%= render "posts/grid", posts: @posts %>
