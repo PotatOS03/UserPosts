@@ -16,7 +16,7 @@ The Devise gem was used to implement user registration and authentication.
 
 ## Installation
 
-This application uses Ruby version 3.3.3.
+This application uses Ruby version 3.3.4.
 
 To install and run the application from GitHub:
 
