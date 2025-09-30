@@ -4,7 +4,7 @@
 
 ### Description
 
-This project is a Ruby on Rails web application created for the Piada Jr Software Engineer programming assignment. It lets registered users create posts and displays those posts for everyone. Users can also view and delete their own posts. The webpage is designed to be responsive to both mobile and desktop platforms.
+This project is a Ruby on Rails web application created for a Jr Software Engineer programming assignment. It lets registered users create posts and displays those posts for everyone. Users can also view and delete their own posts. The webpage is designed to be responsive to both mobile and desktop platforms.
 
 ### Design
 
@@ -23,8 +23,8 @@ To install and run the application from GitHub:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/PotatOS03/piada-programming-assignment.git
-    cd piada-programming-assignment
+    git clone https://github.com/PotatOS03/UserPosts.git
+    cd UserPosts
     ```
 
 2. **Install dependencies:**
